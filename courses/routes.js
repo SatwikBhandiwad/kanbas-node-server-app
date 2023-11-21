@@ -29,7 +29,8 @@ function CourseRoutes(app) {
     
     app.post("/api/courses", (req, res) => {
         const course = { ...req.body,
-          _id: new Date().getTime().toString() };
+          _id: new Date().getTime().toString(),
+          courseColor: "red" };
         Database.courses.push(course);
         res.send(course);
       });
